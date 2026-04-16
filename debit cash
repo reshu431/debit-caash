@@ -1,0 +1,15 @@
+from abc import ABC, abstractmethod
+
+class Payment(ABC):
+    @abstractmethod
+    def payprocess(self, cash):
+        pass
+class CardBill(Payment):
+    def payprocess(self,cash):
+        return cash
+class BankBill(Payment):
+    def payprocess(self, cash):
+        return cash
+loan = [CardBill(),BankBill()]
+for x in loan:
+    print(x.payprocess(3000))
